@@ -6,6 +6,7 @@ import com.marvel.api.marvelchallenge.persistence.dto.Pagination;
 import com.marvel.api.marvelchallenge.services.CharacterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class CharacterController {
 
     private final CharacterService characterService;
 
+    @PreAuthorize("hasAuthority('character:read-all')")
     @GetMapping()
     public ResponseEntity<List<CharacterDTO>> findAll(@RequestParam(required = false) String name,
                                                       @RequestParam(required = false) int[] comics,
@@ -30,6 +32,8 @@ public class CharacterController {
             return ResponseEntity.ok(characterService.findAll(pagination, name, comics, series));
 
     }
+
+    @PreAuthorize("hasAuthority('character:read-detail')")
 
     @GetMapping("/{characterId}")
     public ResponseEntity<CharacterInfoDTO> findAll(@PathVariable Long characterId

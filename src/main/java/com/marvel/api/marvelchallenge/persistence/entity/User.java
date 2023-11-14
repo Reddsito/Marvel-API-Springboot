@@ -53,7 +53,7 @@ public class User implements UserDetails {
         );
 
 
-        return null;
+        return authorities;
     }
 
     @Override
