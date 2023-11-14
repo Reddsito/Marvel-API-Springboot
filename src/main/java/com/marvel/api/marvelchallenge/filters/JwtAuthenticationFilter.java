@@ -1,4 +1,4 @@
-package com.marvel.api.marvelchallenge.filter;
+package com.marvel.api.marvelchallenge.filters;
 
 import com.marvel.api.marvelchallenge.services.JwtService;
 import io.jsonwebtoken.JwtException;
@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

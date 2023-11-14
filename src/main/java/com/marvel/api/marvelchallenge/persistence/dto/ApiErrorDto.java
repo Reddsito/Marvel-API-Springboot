@@ -1,4 +1,4 @@
-package com.marvel.api.marvelchallenge.exceptions;
+package com.marvel.api.marvelchallenge.persistence.dto;
 
 import lombok.Builder;
 import lombok.Getter;

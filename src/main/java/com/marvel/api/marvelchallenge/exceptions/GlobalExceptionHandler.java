@@ -1,5 +1,6 @@
 package com.marvel.api.marvelchallenge.exceptions;
 
+import com.marvel.api.marvelchallenge.persistence.dto.ApiErrorDto;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
