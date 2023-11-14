@@ -43,7 +43,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public void logout()  {
+    public void logout() {
        try {
            http.logout(logoutCOnfig -> {
                logoutCOnfig.deleteCookies("JSESSIONID")

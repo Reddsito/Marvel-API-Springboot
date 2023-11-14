@@ -26,7 +26,7 @@ public class AuthentificationController {
     }
 
     @PostMapping("/logout")
-    public void logout() {
+    public void logout() throws Exception {
         authenticationService.logout();
     }
 
