@@ -6,11 +6,13 @@ import com.marvel.api.marvelchallenge.persistence.entity.User;
 import com.marvel.api.marvelchallenge.services.AuthenticationService;
 import com.marvel.api.marvelchallenge.services.JwtService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public LoginResponse authenticate(LoginRequest loginRequest) {
+
 
         UserDetails user = userDetailsService.loadUserByUsername(loginRequest.username());
         Authentication authentication = new UsernamePasswordAuthenticationToken(
@@ -53,6 +56,21 @@ public class AuthenticationServiceImpl implements AuthenticationService {
        } catch (Exception e) {
             throw new RuntimeException(e);
        }
+    }
+
+    @Override
+    public UserDetails getUserLoggedIn() {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if( !(authentication instanceof UsernamePasswordAuthenticationToken) ) {
+            throw new AuthenticationCredentialsNotFoundException("Se requiere autenticación completa");
+        }
+
+        UsernamePasswordAuthenticationToken authToken = (UsernamePasswordAuthenticationToken) authentication;
+
+        return (UserDetails) authToken.getPrincipal();
+
     }
 
     private Map<String, Object> generateExtraClaims(UserDetails user) {
