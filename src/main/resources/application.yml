@@ -27,3 +27,8 @@ integration:
     public-key: 927377dbe8d9a2788fc038556412d78f
     private-key: f9fd8042fd7dff9c31282d7758e458b4692b05ad
     base-path: http://gateway.marvel.com/v1/public
+
+security:
+  jwt:
+    secret-key: "ASDOHASODHASODHASHD1023W12DHB102312NDOHUJASIODH12HEJHNADSLDJN123HJKLASDH"
+    expiration-minute: 30

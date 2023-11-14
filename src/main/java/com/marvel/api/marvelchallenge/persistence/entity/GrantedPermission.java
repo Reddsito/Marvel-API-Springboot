@@ -1,8 +1,12 @@
 package com.marvel.api.marvelchallenge.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Setter
+@Getter
 public class GrantedPermission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
