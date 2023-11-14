@@ -23,7 +23,7 @@ INSERT INTO granted_permission (role_id, permission_id) VALUES(2,5);
 INSERT INTO granted_permission (role_id, permission_id) VALUES(2,6);
 INSERT INTO granted_permission (role_id, permission_id) VALUES(2,7);
 
--- Usuario reddsito, pass = contrasena123
+-- Usuario Enrique, pass = contrasena123
 INSERT INTO user (username, password, role_id, account_expired, account_locked, credentials_expired, enabled) VALUES ('Enrique', '$2a$10$ZK9Y2UfgLivxy37YPiAQWOLMsujY3XJHkRXGYz4Cv7trCZLPLqudi', 1, false, false, false, true);
--- Usuario jossd, pass = contrasena456
-INSERT INTO user (username, password, role_id, account_expired, account_locked, credentials_expired, enabled) VALUES ('jossd', '$2a$10$juOXaule5VGy1KogEFCu5eFBSmZ54Wv0x1iIbaN7TpcouueD1epKy', 2, false, false, false, true);
+-- Usuario Jossd, pass = contrasena456
+INSERT INTO user (username, password, role_id, account_expired, account_locked, credentials_expired, enabled) VALUES ('Jossd', '$2a$10$juOXaule5VGy1KogEFCu5eFBSmZ54Wv0x1iIbaN7TpcouueD1epKy', 2, false, false, false, true);

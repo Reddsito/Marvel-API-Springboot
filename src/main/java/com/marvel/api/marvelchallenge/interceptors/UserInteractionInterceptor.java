@@ -29,8 +29,6 @@ public class UserInteractionInterceptor implements HandlerInterceptor {
 
         if(request.getRequestURI().startsWith("/api/v1/characters") ||  request.getRequestURI().startsWith("/api/v1/comics")   ) {
 
-            System.out.println("Interceptor: " + this.getClass().getName());
-
             UserDetails user = authenticationService.getUserLoggedIn();
             UserInteractionLog userLog = UserInteractionLog
                     .builder()

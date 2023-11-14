@@ -29,7 +29,6 @@ spring:
       platform: mysql
       mode: always
 
-
 integration:
   marvel:
     public-key: 927377dbe8d9a2788fc038556412d78f
