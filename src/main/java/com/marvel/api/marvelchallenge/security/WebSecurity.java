@@ -26,6 +26,7 @@ public class WebSecurity {
 
         return http
                 .csrf( config -> config.disable() )
+                .authenticationProvider(authProvider)
                 .sessionManagement(config -> config.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(JwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
