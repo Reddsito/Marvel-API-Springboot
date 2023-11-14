@@ -8,7 +8,7 @@ basado en **Spring Security** para identificar a los usuarios que realizan búsq
 información de **Marvel**.
 
 ## Características
-- - -
+
 1. **Consumo de API de Marvel:**
     - La aplicación se conecta a la API de Marvel para obtener información sobre personajes, cómics, historietas y series.
 
@@ -59,6 +59,13 @@ spring:
     password: # TU PASSWORD
 ```
 
+Por defecto se utiliza el perfil DEV, si deseas crear otro o cambiar puedes hacerlo aquí
+```yml
+spring:
+   profiles:
+      active: # ELEGIR PERFIL
+```
+
 Y que no se te olvide la clave para el token (JWT) y el tiempo de expiración del token
 ```yml
 security:
@@ -68,7 +75,7 @@ security:
 ```
 
 ## Paquetes del proyecto
-- - -
+
 * `com.marvel.api.marvelchallenge.controllers`: Contiene las clases controladores para las solicitudes web.
 * `com.marvel.api.marvelchallenge.exceptions`: Contiene las clases relacionas con el control de las excepciones.
 * `com.marvel.api.marvelchallenge.filters`: Incluye los filtros para interceptar las solicitudes web.
@@ -84,7 +91,7 @@ security:
 * `com.marvel.api.marvelchallenge.security.validator`: Contiene validadores de seguridad para rutas.
 
 ## Clases Principales
-- - -
+
 
 ### `MarvelAPIConfig`
 * Clase de configuración que se encarga de proporcionar la clave pública y privada de Marvel y gestionar la autenticación en las solicitudes a la API de Marvel.
@@ -107,7 +114,7 @@ la inyección de Beans de provedores y manager, hasta la configuración de los f
 * La entidad UserInteractionLog y su repositorio gestionan los registros de las interacciones de los usuarios con la aplicación.
 
 ## Scripts SQL
-- - - 
+
 El proyecto incluye la configuración necesaria para que las tablas se creen automaticamente al ejecutar el proyecto. 
 Por defecto esta configuración se encuentra comentada pero basta con 
 descomentar las siguientes propiedades para que se creen las tablas:

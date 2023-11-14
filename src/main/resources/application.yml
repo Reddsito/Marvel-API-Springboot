@@ -31,8 +31,8 @@ spring:
 
 integration:
   marvel:
-    public-key: 927377dbe8d9a2788fc038556412d78f
-    private-key: f9fd8042fd7dff9c31282d7758e458b4692b05ad
+    public-key:
+    private-key:
     base-path: http://gateway.marvel.com/v1/public
 
 security:
